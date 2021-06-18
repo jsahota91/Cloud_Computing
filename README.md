@@ -3,17 +3,17 @@
 - Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing. 
 - Instead of buying, owning, and maintaining physical data centers and servers, you can access technology services, such as computing power, storage, and databases, on an as-needed basis from a cloud provider.
 
-** Providers of Cloud Services **
+**Providers of Cloud Services**
 - AWS
 - Microsoft Azure
 - Google cloud
 
-** Who uses cloud services **
+**Who uses cloud services**
 - Netflix
 - Facebook
 - Spotify
 
-** Benefits **
+**Benefits**
 1. Flexibility
 2. Robustness
 3. Cost-effectiveness
@@ -27,7 +27,7 @@
   - **PaaS (Platform as a service):** manages underlying infrastructure (usually hardware and operating systems), you can focus on deployment and management of your applications. You don’t need to worry about resource procurement, capacity planning, software maintenance, patching.
 
 
-## Create EC2 instance
+## Create EC2 App instance
 On AWS you want to be able to deploy a node app, you will do this by creating an EC2 instance.
 1. Login to AWS
 2. Choose EC2 inside AWS
@@ -97,3 +97,15 @@ If you want to be able to load the app without the 3000 port follow the steps
 2. Create a provision script `sudo nano provision.sh`
 3. Copy all the sudo commands from `step 5 of deploy Node App`
 
+# Create an EC2 Db instance
+1. Follow steps 1-8 in Create an EC2 app instance 
+2. For `Add Tags` do 
+`Name` for key and for Value enter `devops_bootcamp_jaspreet_db`. 
+3. For the Security Group set:
+- SSH : Port- `22` : Source- `My IP`
+- Customer TCP Rule : Port- `27017` : Source- `Your app IP`
+4. Click `Review and Launch`
+
+# Setting up AWS multi-machine
+- Open to Git bash terminals, in one terminal SSH into the app instance, in the other SSH into the Db instance.
+- Follow the steps on this [Multi Machine ReadMe](insert link) 
